@@ -18,7 +18,7 @@ body {
     width: 80%;
     margin: 0 auto; /* Centrar horizontalmente */
     padding: 1em 0.5em;
-    text-shadow: 0.2em 0.2em rgba(0, 0, 0, 0.5);
+    text-shadow: 0.08em 0.08em rgba(0, 0, 0, 0.5);
     text-align: center; /* Centrar el texto */
 }
 
