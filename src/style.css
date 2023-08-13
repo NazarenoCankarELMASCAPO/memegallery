@@ -13,13 +13,13 @@ body {
 }
 
 .title {
-    font-size: 4vw; /* Tamaño de fuente relativo al ancho de la ventana */
+    font-size: 4vw;
     background-color: var(--third-color);
     width: 80%;
-    margin: 0 auto; /* Centrar horizontalmente */
+    margin: 0 auto;
     padding: 1em 0.5em;
     text-shadow: 0.08em 0.08em rgba(0, 0, 0, 0.5);
-    text-align: center; /* Centrar el texto */
+    text-align: center;
 }
 
 .grid-container {
@@ -27,33 +27,37 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Cambiado a "min-height" para evitar que el contenedor sea demasiado pequeño */
-    background-color: var(--first-color); /* Se agregó un color de fondo para el contenedor */
+    min-height: 100vh;
+    background-color: var(--first-color);
 }
 
 .template-grids {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Distribuir en columnas iguales */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 1em;
     padding: 1em;
-    max-width: 1000px; /* Ancho máximo para el grid */
-    margin: 0 auto; /* Centrar horizontalmente */
+    max-width: 1000px;
+    margin: 0 auto;
+    aspect-ratio: 1; /* Mantener la relación de aspecto cuadrada */
 }
 
 .grid-item {
     background-color: var(--third-color);
     box-shadow: 6px 5px var(--fourth-color);
-    width: 100%; /* Ocupar todo el ancho de su contenedor */
-    max-width: 300px; /* Ancho máximo para el item */
-    height: auto; /* Altura automática según el contenido */
-    margin-bottom: 1em;
+    width: 100%;
+    max-width: 300px;
     padding: 1em;
-    text-align: center; /* Centrar el contenido */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .grid-item > img {
-    max-width: 100%; /* Imágenes responsivas */
-    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto; /* Ajustar ancho para mantener la relación de aspecto */
+    height: auto; /* Ajustar altura para mantener la relación de aspecto */
     transition: transform 0.4s;
 }
 
@@ -62,7 +66,7 @@ body {
 }
 
 canvas {
-    max-height: 500px; /* Asegurar que el canvas sea responsivo */
+    max-height: 500px;
     width: auto;
     display: block;
     margin: 0 auto;
@@ -79,6 +83,11 @@ canvas {
 
     .grid-item {
         max-width: 120px;
+    }
+
+    .grid-item > img {
+        max-width: 100%;
+        max-height: 100%;
     }
 
     canvas {
