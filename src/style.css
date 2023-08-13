@@ -61,6 +61,7 @@ body {
     max-height: 100%;
     object-fit: contain;
     display: block;
+    transition: all 0.3s;
 }
 
 .grid-item:hover {
