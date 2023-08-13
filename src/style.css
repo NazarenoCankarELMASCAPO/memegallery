@@ -55,10 +55,15 @@ body {
     transition: box-shadow 0.3s;
 }
 
+.grid-item-inner {
+    width: 100%;
+    padding-top: 100%; /* Establece un aspecto cuadrado para el contenedor interno */
+    position: relative;
+}
+
 .grid-item > img {
     max-width: 100%;
-    height: auto;
-    width: 100%; /* Asegura que la imagen se expanda para mantener el aspecto cuadrado */
+    max-height: 100%;
     object-fit: contain;
     display: block;
 }
@@ -106,8 +111,12 @@ canvas {
         margin-bottom: 0.8em;
     }
 
+    .grid-item-inner {
+        padding-top: 100%; /* Mantiene el aspecto cuadrado para el contenedor interno */
+    }
+
     .grid-item > img {
-        height: 100%; /* Asegura que las imágenes mantengan el aspecto cuadrado */
+        height: auto; /* Mantén la relación de aspecto original de las imágenes */
     }
 
     canvas {
