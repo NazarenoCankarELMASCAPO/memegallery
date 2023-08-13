@@ -61,6 +61,8 @@ body {
     max-height: 100%;
     object-fit: contain; /* Ajusta la imagen para que quepa dentro del espacio del div */
     transition: transform 0.4s;
+    margin: 0 auto;
+    display: block; 
 }
 
 .grid-item:hover > img {
