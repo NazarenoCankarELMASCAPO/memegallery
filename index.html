@@ -3,12 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Meme gallery</title>
+    
+    <link rel="shortcut icon" href="./src/img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./src/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
-    <h2 class="title fw-bold">Meme gallery</h2>
+    <div class="d-flex justify-content-center text-center">
+        <h2 class="title fw-bold text-white rounded-3 p-2 pb-3">Meme gallery</h2>
+    </div>
+
+    <div class="grid-container">
+        <div id="templates-grid" class="template-grids"></div>
+    </div>
+
+    <div class="canvas-container d-flex justify-content-center">
+
+    </div>
+
     <script src="./src/scripts/main.js"></script>
+
+    <script>
+        const memeSelect = document.querySelectorAll(".meme");
+        const canvasContainer = document.querySelector(".canvas-container");
+        let currentScript = null;
+    
+        memeSelect.forEach(meme => {
+            meme.addEventListener("click", () => {
+                const selectedMeme = meme.memeSelection
+                console.log("Selected meme:", selectedMeme);
+    
+                // Limpiar canvasContainer
+                canvasContainer.innerHTML = "";
+    
+                if (currentScript) {
+                    // Eliminar el script previo
+                    currentScript.remove();
+                }
+    
+                // Crear un nuevo script y cargarlo
+                const newScript = document.createElement("script");
+                newScript.src = `./src/scripts/everyMeme/${selectedMeme}.js`;
+                newScript.id = "memeScript";
+                document.body.appendChild(newScript);
+    
+                currentScript = newScript;
+            });
+        });
+    </script>
 </body>
 </html>

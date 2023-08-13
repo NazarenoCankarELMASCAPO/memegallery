@@ -1,3 +1,55 @@
+:root {
+    --first-color: #ececec;
+    --second-color: #9fd3c7;
+    --third-color: #385170;
+    --fourth-color: #142d4c;
+}
+
+body {
+    background: var(--first-color) !important;
+}
+
 .title {
-    font-size: 30px;
+    font-size: 50px;
+
+    background-color: var(--third-color);
+    width: 60%;
+    box-shadow: 6px 5px var(--fourth-color);
+    text-shadow: 5px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.template-grids {
+    display: grid;
+    grid-gap: 20px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background-color: var(--third-color);
+    box-shadow: 6px 5px var(--fourth-color);
+    margin: 0;
+    width: 200px;
+    height: 200px;
+}
+
+.grid-item > img {
+    transition: all 0.4s;
+}
+
+.grid-item > img:hover {
+    transform: scale(1.05);
+}
+
+canvas {
+    max-height: 600px;
 }
