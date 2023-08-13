@@ -30,6 +30,7 @@ body {
     min-height: 100vh;
     background-color: var(--first-color);
     padding-top: 80px; /* Agregado para mantener la distancia desde arriba */
+    margin-bottom: 80px;
 }
 
 .template-grids {
@@ -49,6 +50,10 @@ body {
     height: 0; /* Eliminado el alto fijo para hacer elementos cuadrados */
     padding-top: 100%; /* Agregado para hacer elementos cuadrados */
     position: relative; /* Agregado para posicionar correctamente la imagen */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .grid-item > img {
@@ -72,4 +77,10 @@ canvas {
     background-color: var(--third-color);
     box-shadow: 6px 5px var(--fourth-color);
     padding: 2em;
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        margin-bottom: 30px;
+    }
 }

@@ -4,9 +4,6 @@ const numElements = 9;
 const numRowsCols = Math.ceil(Math.sqrt(numElements));
 const gridContainer = document.getElementById("templates-grid");
 
-// Ajusta la cuadrícula debajo del título, utilizando margen superior
-gridContainer.style.marginTop = "80px"; // Ajusta este valor según el espacio que quieras dejar debajo del título
-
 for (let i = 1; i <= numElements; i++) {
   const gridItem = document.createElement("div");
   
