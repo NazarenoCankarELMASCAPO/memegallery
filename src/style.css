@@ -7,49 +7,63 @@
 
 body {
     background: var(--first-color) !important;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
 .title {
-    font-size: 50px;
-
+    font-size: 4vw; /* Tamaño de fuente relativo al ancho de la ventana */
     background-color: var(--third-color);
-    width: 60%;
-    box-shadow: 6px 5px var(--fourth-color);
-    text-shadow: 5px 4px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin: 0 auto; /* Centrar horizontalmente */
+    padding: 1em 0.5em;
+    text-shadow: 0.2em 0.2em rgba(0, 0, 0, 0.5);
+    text-align: center; /* Centrar el texto */
 }
-
-
 
 .grid-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Cambiado a "min-height" para evitar que el contenedor sea demasiado pequeño */
+    background-color: var(--first-color); /* Se agregó un color de fondo para el contenedor */
 }
 
 .template-grids {
     display: grid;
-    grid-gap: 20px;
-    padding: 10px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Distribuir en columnas iguales */
+    grid-gap: 1em;
+    padding: 1em;
+    max-width: 1000px; /* Ancho máximo para el grid */
+    margin: 0 auto; /* Centrar horizontalmente */
 }
 
 .grid-item {
     background-color: var(--third-color);
     box-shadow: 6px 5px var(--fourth-color);
-    margin: 0;
-    width: 200px;
-    height: 200px;
+    width: 100%; /* Ocupar todo el ancho de su contenedor */
+    max-width: 300px; /* Ancho máximo para el item */
+    height: auto; /* Altura automática según el contenido */
+    margin-bottom: 1em;
+    padding: 1em;
+    text-align: center; /* Centrar el contenido */
 }
 
 .grid-item > img {
-    transition: all 0.4s;
+    max-width: 100%; /* Imágenes responsivas */
+    height: auto;
+    transition: transform 0.4s;
 }
 
-.grid-item > img:hover {
+.grid-item:hover > img {
     transform: scale(1.05);
 }
 
 canvas {
-    max-height: 600px;
+    max-width: 100%; /* Asegurar que el canvas sea responsivo */
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
